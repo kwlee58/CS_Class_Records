@@ -1,0 +1,3575 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+
+<script language=javascript>
+
+	var commonResultMessage = "null";
+	if(commonResultMessage=="" || commonResultMessage=="null") {
+		commonResultMessage = "null";
+	}
+	var localeKey = "ko";
+</script>
+ 
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="0">
+<title>과제제출현황</title>
+</head>
+<body class="iframebody">
+
+통계분석사례연구및실습[505519-01]
+<br>
+<table cellspacing="0" cellpadding="0" border="1">
+<thead>
+		<tr>
+			<th width='60px'>No</th>
+			<th width='90px'>학과</th>
+			<th width='80px'>학번</th>
+			<th width='90px'>이름</th>
+			<th width='70px'>학년</th>
+			
+			<th width="50px">1</th>
+			
+			<th width="50px">2</th>
+			
+			<th width="50px">3</th>
+			
+			<th width="50px">4</th>
+			
+			<th width="50px">5</th>
+			
+			<th width="50px">6</th>
+			
+			<th width="50px">7</th>
+			
+			<th width="50px">8</th>
+			
+			<th width="50px">9</th>
+			
+			<th width="50px">합계</th>
+		</tr>
+	</thead>
+	<tbody>
+			
+		
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>1</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20073164</td>
+				<td  align='center' colspan='1'>
+						장인섭
+				</td>
+				<td  align='center' colspan='1'>4</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">2 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>2</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20083174</td>
+				<td  align='center' colspan='1'>
+						한대성
+				</td>
+				<td  align='center' colspan='1'>3</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">9 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>3</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20093302</td>
+				<td  align='center' colspan='1'>
+						강준호
+				</td>
+				<td  align='center' colspan='1'>4</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">0</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">9 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>4</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20093319</td>
+				<td  align='center' colspan='1'>
+						김효현
+				</td>
+				<td  align='center' colspan='1'>3</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">9 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>5</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20093378</td>
+				<td  align='center' colspan='1'>
+						최재혁
+				</td>
+				<td  align='center' colspan='1'>4</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">8 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>6</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20103404</td>
+				<td  align='center' colspan='1'>
+						김대한
+				</td>
+				<td  align='center' colspan='1'>3</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">9 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>7</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20103413</td>
+				<td  align='center' colspan='1'>
+						김형섭
+				</td>
+				<td  align='center' colspan='1'>4</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">9 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>8</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20103415</td>
+				<td  align='center' colspan='1'>
+						김희현
+				</td>
+				<td  align='center' colspan='1'>3</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">9 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>9</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20103416</td>
+				<td  align='center' colspan='1'>
+						남순창
+				</td>
+				<td  align='center' colspan='1'>4</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">9 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>10</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20103422</td>
+				<td  align='center' colspan='1'>
+						신혁재
+				</td>
+				<td  align='center' colspan='1'>4</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">7 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>11</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20103423</td>
+				<td  align='center' colspan='1'>
+						신희명
+				</td>
+				<td  align='center' colspan='1'>3</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">8 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>12</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20105176</td>
+				<td  align='center' colspan='1'>
+						조형래
+				</td>
+				<td  align='center' colspan='1'>3</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">9 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>13</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20113424</td>
+				<td  align='center' colspan='1'>
+						유계현
+				</td>
+				<td  align='center' colspan='1'>3</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">9 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>14</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20113431</td>
+				<td  align='center' colspan='1'>
+						이흥배
+				</td>
+				<td  align='center' colspan='1'>3</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">9 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>15</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20123402</td>
+				<td  align='center' colspan='1'>
+						강혜빈
+				</td>
+				<td  align='center' colspan='1'>4</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">8 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>16</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20123407</td>
+				<td  align='center' colspan='1'>
+						김연빈
+				</td>
+				<td  align='center' colspan='1'>4</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">2 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>17</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20123419</td>
+				<td  align='center' colspan='1'>
+						성홍주
+				</td>
+				<td  align='center' colspan='1'>4</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">9 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>18</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20123423</td>
+				<td  align='center' colspan='1'>
+						윤나현
+				</td>
+				<td  align='center' colspan='1'>4</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">9 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>19</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20123425</td>
+				<td  align='center' colspan='1'>
+						이다은
+				</td>
+				<td  align='center' colspan='1'>4</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">2 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>20</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20123426</td>
+				<td  align='center' colspan='1'>
+						이란영
+				</td>
+				<td  align='center' colspan='1'>4</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">9 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>21</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20123429</td>
+				<td  align='center' colspan='1'>
+						이승훈
+				</td>
+				<td  align='center' colspan='1'>2</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">1 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>22</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20123434</td>
+				<td  align='center' colspan='1'>
+						정선경
+				</td>
+				<td  align='center' colspan='1'>4</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">8 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>23</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20123437</td>
+				<td  align='center' colspan='1'>
+						최지영
+				</td>
+				<td  align='center' colspan='1'>4</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">0</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">0</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">8 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>24</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20127115</td>
+				<td  align='center' colspan='1'>
+						조덕주
+				</td>
+				<td  align='center' colspan='1'>4</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">2 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>25</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20133404</td>
+				<td  align='center' colspan='1'>
+						김소연
+				</td>
+				<td  align='center' colspan='1'>3</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">9 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>26</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20133415</td>
+				<td  align='center' colspan='1'>
+						박경미
+				</td>
+				<td  align='center' colspan='1'>3</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">0</font></td>
+				
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">5 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>27</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20133421</td>
+				<td  align='center' colspan='1'>
+						양한솔
+				</td>
+				<td  align='center' colspan='1'>3</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">9 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>28</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20133424</td>
+				<td  align='center' colspan='1'>
+						이민하
+				</td>
+				<td  align='center' colspan='1'>3</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+				
+					<td  align='center' colspan='1'><font color="red">미제출</font></td>
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">7 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>29</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20133427</td>
+				<td  align='center' colspan='1'>
+						이은정
+				</td>
+				<td  align='center' colspan='1'>3</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">9 / 9</td>
+				</tr>
+				
+
+			
+								
+			
+			<tr>
+				<td  align='center' colspan='1'>30</td>
+				<td  align='center' colspan='1'>금융정보통계학과</td>
+				<td  align='center' colspan='1'>20135124</td>
+				<td  align='center' colspan='1'>
+						남희정
+				</td>
+				<td  align='center' colspan='1'>3</td>
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+
+			
+								
+			
+				
+					
+					
+					<td  align='center' colspan='1'><font color="blue">100</font></td>
+				
+				
+				
+				
+				<td  align='center' colspan='1' style="mso-number-format:'@';">9 / 9</td>
+				</tr>
+				
+
+			
+		
+	</tbody>
+</table>
+</div>
+</body>
+</html>

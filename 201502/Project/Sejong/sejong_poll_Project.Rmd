@@ -1,0 +1,292 @@
+---
+title: "세종대왕의 세법개혁과 세법개혁에 대한 국민투표"
+author: "성이다르조"
+date: "2015년 12월 10일"
+output: html_document
+---
+
+##세종대왕(1418년~1450년)의 업적
+ 
+ 세종대왕은 조선의 제 4대 왕으로 22세에 즉위하였다. 훈민정음을 창제하고 국토확장과 측우기와 같은 과학기구를 제작하게 하고, 농사직설을 편찬하여 농업 생산성을 높이게 하였다. 이러한 많은 업적과 정책은 대다수가 백성을 생각하고 백성을 위한 정책이었다. 그 중 세종대왕이 가장 많은 혼과 시간을 들여 만든 공법 역시 빼놓을 수 없는 정책이라 볼 수 있다. 
+ 세종대왕은 조선을 건국한 선왕인 태조가 시행한 답험손실법에 따른 조세관련 폐해를 막을 수 있는 전세법을 입법하고자 하였다. 조세로 인한 백성의 불편함과 억울함을 해소시켜 백성들의 삶을 편하게 하기 위한 것으로 그것은 1순위 정책이었다.  또한 답험손실법의 경우 개별적인 납세자의 공평과세를 위해서는 좋지만, 납세자가 개인별의 징수세액을 산정하는 절차가 번잡하여, 징세의 편의 측면에서 세법을 개정하여 공법을 제정하고자 하였다. 이러한 공법은 군주시대에 전국적인 여론조사에 의한 입법으로 5개월에 걸쳐 실시했으며, 그 당시 1432년 세종실록지리지에 기록된 인구가 692,477명 이었는데 총172,806명에 대한 여론을 수렴 한 것으로 보아 인구의 4분의 1이 참여했다고 볼 수 있다. 절대왕권 시대에 조세제도를 입법하기 위하여 민주적인 여론수렴을 했다는 것은 세계적으로 남을 업적이라 볼 수 있다.
+
+
+```{r}
+#연도별 호수 및 인구수
+#sejong.number<-read.table("population.txt", header=TRUE,sep="")
+#sejong.number<-read.table("population.txt", header=TRUE,sep="",encoding ="UTF-8" )
+#sejong.number<-read.table("./population_utf8.txt",header=TRUE,sep="")
+
+#sejong.number
+#plot(x=sejong.number$"연도", y=sejong.number$"호수",type="b",ann=F, xaxt="n",yaxt="n",ylim=c(0,8000000))
+#lines(x=sejong.number$"연도", y=sejong.number$"인구", type="b",col="red")
+#axis(side=1, at=seq(1400,1800,by=100),labels=seq(1400,1800, by=100))
+#axis(side=2, at=seq(0,8000000,by=2000000),labels=seq(0,800,by=200),las=1)
+#title(main="조선시대 호수와 인구수의 변화",xlab="연도",ylab="호수와 인구수(단위: 만)")
+#text(x=c(1650,1700),y=c(5000000,1900000), labels=c("인구","호수"),col=c("red","black"))
+#legend("topleft",inset=0.05,fill=c("red","black"),legend=c("인구","호수"))
+```
+
+
+##연구목적 및 연구방법
+ 
+ 세종이 태종을 벗어나 독립적으로 처음 주장을 펼친 것이 세법이다. 15세기에 세법개혁을 위해 국민투표 (여론조사)를 실시했다는 것은 위대하다고 볼 수 있는 점이다. 여론조사 자료를 바탕으로 통계를 배우는 학생으로써 세종의 세법개혁에 대해 좀 더 깊게 조사해 볼 필요성을 느꼈다. 그에 따라 여론조사 결과를 분석함으로써 세종의 세법개혁을 좀 더 통계적으로 분석 할 수 있는 계기가 될 것이라 생각하여 이 주제를 결정하게 되었다. 세종대왕의 세법개혁을 바탕으로 전체계급에 대한 찬반과 지역별 여론조사를 분석하여 그래프로 나타내어 보고 어떤 문제점과 차이를 보이는지 분석해보고자 한다.  
+ 연구방법은 세종실록에서 가져온 원자료와 오기수 교수님의 논문에 요약된 표를 바탕으로 쉽게 사용할 수 있도록 저장된txt파일을 이용하여 Rstudio를 통해 실행하였다. Pie chart와 barplot 그리고 ggplot을 이용해 전체계급에 대한 찬반과 지역별 여론조사를 그래프를 통해 분석하였다. 
+
+
+
+##그래프 분석
+
+###Data
+ 
+ 원자료는 세종실록에서, 요약한 표는 오기수 교수님의 논문을 참고한 자료이다. txt파일로 저장된 자료를 불러들여 구조를 살핀다.
+```{r}
+#setwd("J:/Project")
+#getwd()
+sejong.poll<-read.table("sejong_poll.txt", header=TRUE,sep="")
+str(sejong.poll)
+sejong.poll
+```
+
+ 불러온 원자료를 새로운 변수로 저장하고, 요인으로 투표,계급,지역이 필요하기 때문에 factor()를 사용하여 알파벳 순서에 따라 집계할 때 고려하는 부분에서 위험요소를 없앤다.
+```{r}
+sejong.poll.2<-sejong.poll
+
+sejong.poll.2$vote<-factor(sejong.poll.2$vote, levels=c("yes","no"), labels=c("찬성","반대"))
+sejong.poll.2$class<-factor(sejong.poll.2$class, levels=c("high","chief","third.current","third.ex","ordinary"), labels=c("대신 등","수령", "3품이하현직", "3품이하전직", "품관촌민"))
+sejong.poll.2$region<-factor(sejong.poll.2$region, levels=c("Seoul","yuhu", "gyunggi", "pyungan", "hwanghae", "chungcheong", "kangwon", "hamgil", "gyungsang", "jeolla"),labels=c("서울","유후사","경기","평안","황해","충청","강원","함길","경상","전라"))
+str(sejong.poll.2)
+sejong.poll.2
+```
+
+ Pie chart에 필요한 찬성과 반대의 색깔을 지정한다.
+```{r}
+sejong.poll.2$color[sejong.poll.2$vote=="찬성"]<-"blue"
+sejong.poll.2$color[sejong.poll.2$vote=="반대"]<-"red"
+```
+
+###그래프 그리기
+
+####전체 찬반
+#####Pie Chart
+ 
+ 반올림하여 소수점 셋째 자리까지 나타 날 수 있게 option 지정후, 전체 찬반을 Pie chart로 나타내 보았다. 
+kable함수를 사용하여 표를 나타내보았고, 공법시행에 대하여 시각적으로 보기 쉽게 전체 찬반을 pie 차트로 그려본 결과  총 172806 명중 찬성 98657명, 반대 74149명으로 볼 수 있다. 즉 찬성이 57.1%, 반대가 42.9%로 찬성이 더 많다는 것을 볼 수 있지만. 세종대왕은 공법을 바로 시행하지않았다.
+```{r}
+options(digits=3)
+library(knitr)
+kable(t(as.matrix(xtabs(counts~vote, data=sejong.poll.2),caption="투표수")))
+#xtabs(counts~vote, data=sejong.poll.2)
+prop.table(xtabs(counts~vote, data=sejong.poll.2))
+
+pie(xtabs(counts~vote,data=sejong.poll.2),col=sejong.poll.2$color)
+title(main="전체 찬반")
+text(x=0, y=c(0.4,-0.4), labels=c("98657", "74149"))
+```
+
+
+
+
+
+ 4개의 각 관료 인구수와 품관촌민 인구수가 월등히 차이가 나므로 관료집단과 품관촌민 두그룹으로 나눠서 pie chart를 그려보았다. 전체를 세부적으로 보기위해 class에 따른 투표수를 살펴보았고, 관료와 품관촌민의 인구수가 월등히 차이나므로 지역에 따라 관료집단과 품관촌민으로 나눠 살펴 보았다. Pie chart를 그려본 결과 두 그룹 모두 찬성이 높은 것으로볼 수 있으나, 다른계급에 비해 대신들의 반대투표가 많아 공법을 바로 시행하지 않았다.
+```{r}
+kable(xtabs(counts~vote+class, data=sejong.poll.2))
+#xtabs(counts~vote+class, data=sejong.poll.2)
+
+sejong.poll.2$class.2<-ifelse(sejong.poll.2$class=="품관촌민", "품관촌민", "관료집단")
+str(sejong.poll.2)
+sejong.poll.2$class.2<-factor(sejong.poll.2$class.2,levels=c("관료집단","품관촌민"),labels=c("관료집단","품관촌민"))
+str(sejong.poll.2)
+
+kable(xtabs(counts~vote+class.2, data=sejong.poll.2))
+#xtabs(counts~vote+class.2, data=sejong.poll.2)
+addmargins(xtabs(counts~vote+class.2, data=sejong.poll.2))
+prop.table(xtabs(counts~vote+class.2,data=sejong.poll.2), margin=2)
+
+attach(sejong.poll.2)
+par(mfrow=c(1,2))
+pie(xtabs(counts~vote+class.2,data=sejong.poll.2[class.2=="관료집단",], drop=T), labels=c("찬성", "반대"),col=c("blue","red"))
+title(main="관료집단의 찬반")
+text(x=0, y=c(0.4,-0.4), labels=c("915", "845"))
+pie(xtabs(counts~vote+class.2,data=sejong.poll.2[class.2=="품관촌민",], drop=T), labels=c("찬성", "반대"),col=c("blue","red"))
+title(main="품관촌민의 찬반")
+text(x=0, y=c(0.4,-0.4), labels=c("97,742", "73,304"))
+```
+
+
+
+
+
+
+####지역에 따른 여론조사결과
+
+#####Bar chart & Mosicplot
+ 
+ 시각적으로 찬반을 비교하기에 Bar plot과 Mosicplot이 적합하다. 우선, 관료와 품관촌민의 인구수가 월등히 차이나므로 지역에 따라 관료집단과 품관촌민으로 나눠 살펴 보았다.
+```{r}
+par(mfrow=c(1,1))
+kable(xtabs(counts~vote+region,data=sejong.poll.2[class.2=="관료집단",], drop=T))
+kable(xtabs(counts~vote+region,data=sejong.poll.2[class.2=="품관촌민",], drop=T))
+
+#xtabs(counts~vote+region,data=sejong.poll.2[class.2=="관료집단",], drop=T)
+#xtabs(counts~vote+region,data=sejong.poll.2[class.2=="품관촌민",], drop=T)
+```
+
+####서울지역의 관료집단 여론조사결과
+ 
+ 서울은 다른 지역보다 월등히 많은 관료가 거주하므로 별도 집계하여, 서울지역과 그외지역으로 나누어  barplot과 mosaicplot으로 그려보았다. 그 결과 대신이나 3품이하의 현직은 반대가 높은반면 3품이하의 전직의 경우 찬성이 훨씬 높은 것을 볼 수 있다. 왜냐하면 3품이하 전직의 대부분이 개성에 남아있는 전 왕조의 유신들이기 때문에 크게 반대할 이유가 없어거의 찬성으로 의견을 수립하였기 때문이다.
+```{r}
+kable(xtabs(counts~vote+class,data=sejong.poll.2[region=="서울",], drop=T))
+#xtabs(counts~vote+class,data=sejong.poll.2[region=="서울",], drop=T)
+
+barplot(xtabs(counts~vote+class,data=sejong.poll.2[region=="서울",],drop=T),col=c("blue","red"),las=1)
+title(main="서울의 찬반")
+text(x=c(0.7, 1.9, 1.9, 3.1, 3.1), y=c(120, 450, 135, 500, 220), labels=c("194","393", "259", "117", "443"))
+legend("topleft",inset=0.05,fill=c("blue","red"),legend=c("찬성", "반대"))
+
+mosaicplot(xtabs(counts~class+vote, data=sejong.poll.2[region=="서울",], drop=T), col=c("blue","red"), main="서울의 찬반", xlab="계급" , ylab ="찬반")
+```
+
+
+
+
+
+####서울지역을 제외한 지역별 관료들의 여론조사결과
+
+ 서울지역을 제외한 지역별 관료들의 찬반을 barplot과 mosaicplot으로 그려보았다.
+```{r}
+kable(xtabs(counts~vote+region,data=sejong.poll.2[class.2=="관료집단" & !region=="서울",], drop=T))
+#xtabs(counts~vote+region,data=sejong.poll.2[class.2=="관료집단" & !region=="서울",], drop=T)
+barplot(xtabs(counts~vote+region, data=sejong.poll.2[class.2=="관료집단" & !region=="서울",], drop=T), col=c("blue","red"),las=1)
+title(main="지방 관료들의 찬반")
+legend("topleft", inset=0.05, fill=c("blue", "red"), legend=c("찬성", "반대"))
+
+mosaicplot(xtabs(counts~region+vote, data=sejong.poll.2[class.2=="관료집단" & !region=="서울",], drop=T), col=c("blue","red"), main="", xlab="계급", ylab="찬반")
+title(main="지방 관료들의 찬반")
+```
+
+####서울지역을 제외한 지역별 품관촌민의 여론조사결과
+
+ 서울지역을 제외한 지역별 품관촌민의 찬반을 barplot과 mosaicplot으로 그려본 결과 경기도와 경상도 그리고 전라도는 찬성이 높은 것으로 볼 수 있다. 평안도와 황해도, 강원도 및 함길도는 반대가 더 높은 경향을 볼 수 있다. 그 까닭을 살펴보면 왕의 의견과 달리 기득권 지주들의 생각이 반영되어 취지가 정확하지 않아 소통의 문제도 있었을 것이라고 생각된다. 또한, 세종대왕이 여론을 수렴하는 당시의 공법안은 토지의 등급이나 한해의 풍흉에 따른 연분을 고려하지 않고 전세를 징수 하는 것이었는데, 경상도나 전라도와 같은 연해지대는 논과 밭이 아주 비옥하여 소출이 많았지만 강원도의 경우 산을 의지해 이루어진 고을은 소출이 굉장히 적었기 때문이다.
+```{r}
+barplot(xtabs(counts~vote+region, data=sejong.poll.2[class.2=="품관촌민",], drop=T), col=c("blue","red"),las=1)
+title(main="품관촌민들의 지역별 찬반")
+legend("topleft", inset=0.03, fill=c("blue", "red"), legend=c("찬성", "반대"))
+
+mosaicplot(xtabs(counts~region+vote, data=sejong.poll.2[class.2=="품관촌민",], drop=T), col=c("blue","red"), main="품관촌민의 지역별 찬반", xlab="지역", ylab="찬반")
+```
+
+
+
+
+
+####충청 지역의 여론조사결과
+
+ 충청지역을 따로 그래프를 그려본 이유는 충청도의 경우 관료집단은 찬성이 조금 더 높은반면 품관촌민의 경우 반대가 훨씬 높아 따로 집계하여 분석해보았다. barplot을 그려본 결과 품관촌민이 약 66.7%정도로 반대가 높았고 대신의경우 100%반대, 수령의 경우 찬성이 약 57.4%로볼수 있다. 여기서 유의해야할점은 품관촌민의 수가 수령과 대신보다 훨씬높고, 대신의 경우 100%로 반대수가 많아보이지만 사실상 총 2명이 반대했다는 사실을 알아야한다. 시각적으로 찬반을 더 보기쉽게 하기위해 Mosaicplot을 추가하여 그래프를 분석하였다.
+```{r}
+kable(xtabs(counts~vote+class, data=sejong.poll.2[region=="충청",], drop=T))
+#xtabs(counts~vote+class, data=sejong.poll.2[region=="충청",], drop=T)
+
+prop.table(xtabs(counts~vote+class, data=sejong.poll.2[region=="충청",], drop=T), margin=2)
+barplot(prop.table(xtabs(counts~vote+class, data=sejong.poll.2[region=="충청",], drop=T), margin=2), col=c("blue","red"), ylim=c(0, 1.5), axes=F)
+axis(side=2, at=c(0, 0.5, 1.0), labels=c("0%", "50%", "100%"),las=1)
+title(main="충청도의 계급별 찬반 비율")
+legend("topleft", inset=0.05, fill=c("blue", "red"), legend=c("찬성", "반대"))
+text(x=c(0.7, 1.9, 1.9, 3.1, 3.1), y=c(0.5, 0.3, 0.8, 0.15, 0.65), labels=c(2, 35, 26, 6982, 14013))
+
+mosaicplot(xtabs(counts~class+vote, data=sejong.poll.2[region=="충청",], drop=T), col=c("blue","red"), main="", xlab="계급", ylab="찬반")
+title(main="충청도의 찬반")
+```
+
+
+
+
+
+
+ 작업 디렉토리의 이미지와 히스토리를 저장하고 작업을 마무리.
+```{r}
+save.image(file="sejong_poll_project.rda")
+```
+
+
+
+
+##GGPlot에서 해보면
+ggplot2 패키지를 이용하여 골격을 그리고, theme_bw()를 적용하여 배경을 흰색으로 바꾸었다.
+또한, 범례를 그래프 안쪽으로 변경하였다.
+
+```{r}
+#install.packages("ggplot2")
+library(ggplot2)
+```
+
+####서울지역의 여론조사
+```{r}
+(sejong.poll.2.seoul <- subset(sejong.poll.2, region == "서울"))
+(kable(xtabs(counts~vote+class, data=sejong.poll.2.seoul, drop=TRUE)))
+(g1<-ggplot(sejong.poll.2.seoul,aes(x=class,y=counts,fill=vote))+geom_bar(stat="identity")+theme_bw())
+(g1.1.1<-g1+ scale_fill_manual(values=c("blue", "red"), labels=c("찬성", "반대")) + labs(fill="vote"))
+```
+
+####서울지역을 제외한 나머지 지역의 관료집단들에대한 여론조사
+```{r fig.width=12, fig.height=6}
+(sejong.poll.2.bureaus <- subset(sejong.poll.2, class.2 == "관료집단"))
+(bureaus.region <- subset(sejong.poll.2.bureaus, !region=="서울"))
+(bureaus.region.tbl <- xtabs(counts ~ vote + region, data = bureaus.region, drop = TRUE))
+(kable(bureaus.region.tbl))
+(bureaus.region.df <- as.data.frame(bureaus.region.tbl))
+(g3<-ggplot(bureaus.region.df, aes(x=region, y=Freq, fill=vote)) +geom_bar(stat="identity")+theme_bw())
+(g3.3.3<-g3+ scale_fill_manual(values=c("blue", "red"), labels=c("찬성", "반대")) + labs(fill="vote"))
+```
+
+####서울지역을 제외한 나머지 지역의 품관촌민들에대한 여론조사
+```{r}
+(sejong.poll.2.commons <- subset(sejong.poll.2, class.2 == "품관촌민"))
+(commons.region <- subset(sejong.poll.2.commons, !region=="서울"))
+(commons.region.tbl<- xtabs(counts~vote+region, data=commons.region, drop=TRUE))
+kable(commons.region.tbl)
+(commons.region.df<- as.data.frame(commons.region.tbl))
+(g4<-ggplot(commons.region.df,aes(x=region, y=Freq, fill=vote))+geom_bar(stat="identity")+theme_bw())
+(g4.4.4<-g4+ scale_fill_manual(values=c("blue", "red"), labels=c("찬성", "반대")) + labs(fill="vote"))
+```
+
+
+####충청지역의 여론조사 결과
+```{r}
+(sejong.poll.2.cc<-subset(sejong.poll.2,region=="충청"))
+(sejong.cc<-prop.table(xtabs(counts~vote+class, data=sejong.poll.2.cc, drop=TRUE),margin=2))
+kable(sejong.cc)
+(sejong.cc.df <- as.data.frame(sejong.cc))
+(g5<-ggplot(sejong.cc.df,aes(x=class,y=Freq,fill=vote))+geom_bar(stat="identity")+theme_bw())
+(g5.5.5<-g5+ scale_fill_manual(values=c("blue", "red"), labels=c("찬성", "반대")) + labs(fill="vote"))
+```
+
+####한글 정보 입력
+ 한글 테마 sourcing
+한글테마를 적용하여 x축과 y축의 라벨을 수정하고, 전체 제목을 추가하였다.
+```{r}
+source("./theme_kr.R")
+ls()
+
+(g1.1<-g1.1.1+theme.kr+xlab("계급")+ylab("투표수")+ggtitle("서울의 찬반")+theme(plot.title=element_text(size=30),legend.position=c(0.1,0.88)))
+
+(g3.3<-g3.3.3+theme.kr+xlab("지역")+ylab("투표수")+ggtitle("지방관료들의 찬반")+theme(plot.title=element_text(size=30),legend.position=c(0.1,0.88)))
+
+(g4.4<-g4.4.4+theme.kr+xlab("지역")+ylab("투표수")+ggtitle("품관촌민의 지역별 찬반")+theme(plot.title=element_text(size=30),legend.position=c(0.1,0.88)))
+
+(g5.5<-g5.5.5+theme.kr+xlab("계급")+ylab("투표율(%)")+ggtitle("충청도의 찬반")+theme(plot.title=element_text(size=30)))
+```
+
+
+
+##결론
+
+
+
+##참고자료
+
+세종대왕의 조세사상과 공법(貢法) 연구-오기수 논문자료
+http://rpubs.com/kwlee58
+https://github.com/kwlee58/Sejong
+
+

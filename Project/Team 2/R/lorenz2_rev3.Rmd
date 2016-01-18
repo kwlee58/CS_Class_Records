@@ -1,0 +1,576 @@
+---
+title: "각 나라 로렌츠 곡선 비교"
+author: "4조"
+date: "2015년 12월 6일"
+output: html_document
+---
+
+각 나라 로첸츠 곡선을 만들기 위해서는 각 나라별 소득 자료가 필요하다. 그래서 우리조는 국가통계포털에서 각 나라 소득분포자료를 가져왔으며, 우리는 일단 그것을
+'data.1.xlsx'라는 파일로 저장했다.
+
+```{r,echo=T,results="hide"}
+library(knitr)
+library(xlsx)
+data1 <- read.xlsx("data1.xlsx", 1, startRow=3, endRow=32, colIndex=3:7, colClasses=rep("numeric", 5), header=FALSE)
+data1
+data2 <-data1[-1,]
+data2
+data3 <-data2[-8,]
+data3
+data4 <-data3[-9,]
+data4
+data5 <- data4[-20,]
+data5
+data6 <- data5[-22,]
+data6
+```
+
+
+```{r,echo=F,message=FALSE,results="hide"}
+data7 <- as.matrix(data6)
+data7
+t(data7)
+data8 <- t(data7)
+y0 <- c(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+data8 <- rbind(y0, data8)
+data8
+
+
+```
+
+
+누적으로 변환시킨다.
+```{r}
+x1 <- c(0,20,40,60,80,100)
+cbind(x1, data8)
+data9 <- cbind(x1, data8)
+```
+
+누적을 만든다.
+```{r}
+is.matrix(data9)
+data10<- as.table(data9)
+data10
+cbind(x = data10[,1], apply(data8[, 1:25], 2, cumsum))
+```
+
+
+```{r}
+datadown1 <- read.xlsx("data1.xlsx", 1, startRow=3, endRow=32, colIndex=2, colClasses="numeric", header=FALSE)
+datadown1
+datadown2 <-datadown1[-1,]
+datadown2
+datadown3 <-datadown2[-8]
+datadown3
+datadown4 <-datadown3[-9]
+datadown4
+datadown5 <- datadown4[-20]
+datadown5
+datadown6 <- datadown5[-22]
+datadown6
+datadown7 <- as.matrix(datadown6)
+datadown7 
+datadown8 <- t(datadown7)
+datadown8
+datadown9 <- as.table(datadown8)
+datadown10<- as.numeric(datadown9)
+datadown10
+
+```
+
+
+```{r}
+data8
+datat1 <-  data8[-1,]
+datat1
+datat2 <- datat1[1,]
+datat3<- as.matrix(datat2)
+datat4 <-t(datat3)
+datat4
+datat5<-as.table(datat4)
+datat6 <- as.numeric(datat5)
+datat6
+
+```
+
+
+```{r}
+datat7 <- datat6 - datadown10
+datat7
+datat8<- as.matrix(datat7)
+datat9 <-t(datat8)
+datat9
+
+```
+
+
+```{r}
+newdata1 <- datat1[-1,] 
+newdata1
+newdata2 <- rbind(datat9, newdata1)
+newdata2
+newdata3 <- rbind(datadown10, newdata2)
+newdata4<- rbind(y0, newdata3)
+newdata4
+```
+
+하위 정리를 끝내면 상위를 정리한다.
+```{r}
+dataup1 <- read.xlsx("data1.xlsx", 1, startRow=3, endRow=32, colIndex=8, colClasses="numeric", header=FALSE)
+dataup1
+dataup2 <-dataup1[-1,]
+dataup2
+dataup3 <-dataup2[-8]
+dataup3
+dataup4 <-dataup3[-9]
+dataup4
+dataup5 <- dataup4[-20]
+dataup5
+dataup6 <- dataup5[-22]
+dataup6
+dataup7 <- as.matrix(dataup6)
+dataup7 
+dataup8 <- t(dataup7)
+dataup8
+dataup9 <- as.table(dataup8)
+dataup10<- as.numeric(dataup9)
+dataup10
+```
+
+
+```{r}
+newdata4
+dataq1 <-newdata4[7,]
+dataq1
+dataq2<-as.numeric(dataq1)
+dataq2
+dataq3<- dataq2-dataup10
+dataq3
+dataq4<-as.matrix(dataq3)
+dataq5 <- t(dataq4)
+dataq5
+```
+
+```{r}
+newdata4
+newdata5 <- newdata4[-7,]
+newdata6 <- rbind(newdata5, dataq5)
+newdata6
+newdata7 <- rbind(newdata6, dataup8)
+newdata7
+```
+
+
+```{r}
+x2 <- c(0,10,20,40,60,80,90,100)
+cbind(x2, newdata7)
+newdata8 <- cbind(x2, newdata7)
+newdata8
+```
+
+```{r}
+newdata9<- as.table(newdata8)
+newdata9
+newdata10 <- cbind(x = newdata9[,1], apply(newdata9[, 2:26], 2, cumsum))
+newdata10
+str(newdata10)
+dimnames(newdata10)[[2]] <-c("소득분위(%)","한국","아르메니","부탄","그루지야","라오스","필리핀","베트남","멕시코","볼리비아","브라질","콜롬비아","코스타리카","도미니카","에콰도르","엘살바도","파나마","파라과이","페루","우루과이","알바니아","루마니아","기니","모리셔스","탄자니아","우간다")
+```
+
+이제 각 나라별 누적소득 자료에 대한 표를 만든다.
+```{r}
+kable(newdata10)
+```
+
+plot을 만들기 위해 newdata에서 각 누적분포와 나라별 변수 추출한다.
+```{r}
+x <- newdata10[,1]
+x
+y1 <-newdata10[,2]
+y1
+y2 <-newdata10[,3]
+y2
+y3 <- newdata10[,4]
+y3
+y4 <- newdata10[,5]
+y4
+y5 <- newdata10[,6]
+y5
+y6 <- newdata10[,7]
+y6
+y7 <- newdata10[,8]
+y7
+y8 <- newdata10[,9]
+y8
+y9 <- newdata10[,10]
+y9
+y10 <- newdata10[,11]
+y10
+y11 <- newdata10[,12]
+y11
+y12 <- newdata10[,13]
+y12
+y13 <- newdata10[,14]
+y13
+y14 <- newdata10[,15]
+y14
+y15 <- newdata10[,16]
+y15
+y16 <- newdata10[,17]
+y16
+y17 <- newdata10[,18]
+y17
+y18 <- newdata10[,19]
+y18
+y19 <- newdata10[,20]
+y19
+y20 <- newdata10[,21]
+y20
+y21 <- newdata10[,22]
+y21
+y22 <- newdata10[,23]
+y22
+y23 <- newdata10[,24]
+y23
+y24 <- newdata10[,25]
+y24
+y25 <- newdata10[,26]
+y25
+```
+
+아시아 국가별 로렌츠 곡서
+```{r}
+opar<-par(no.readonly=TRUE)
+par(mfrow=c(2,4))
+plot(x , y1, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y1, labels=paste(y1))
+lines(x = x, y = x)
+title(main="Lorenz curve of korea",xlab="People Cumulated",ylab="Income Cumulated")
+plot(x , y2, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y2, labels=paste(y2))
+lines(x = x, y = x)
+title(main="Lorenz curve of Armenia",xlab="People Cumulated",ylab="Income Cumulated")
+plot(x , y3, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y3, labels=paste(y3))
+lines(x = x, y = x)
+title(main="Lorenz curve of Bhutan",xlab="People Cumulated",ylab="Income Cumulated")
+plot(x , y4, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y4, labels=paste(y4))
+lines(x = x, y = x)
+title(main="Lorenz curve of Georgia ",xlab="People Cumulated",ylab="Income Cumulated")
+plot(x , y5, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y5, labels=paste(y5))
+lines(x = x, y = x)
+title(main="Lorenz curve of Laos ",xlab="People Cumulated",ylab="Income Cumulated")
+axis(side=1,at=x, labels=paste(x))
+plot(x , y6, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y6, labels=paste(y6))
+lines(x = x, y = x)
+title(main="Lorenz curve of Philippines",xlab="People Cumulated",ylab="Income Cumulated")
+plot(x , y7, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y7, labels=paste(y7))
+lines(x = x, y = x)
+title(main="Lorenz curve of Vietnam",xlab="People Cumulated",ylab="Income Cumulated")
+
+```
+
+
+북아메리카카 로렌츠 곡선
+
+```{r}
+par(mfrow=c(1,1))
+plot(x , y8, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y8, labels=paste(y8))
+lines(x = x, y = x)
+title(main="Lorenz curve of Mexico",xlab="People Cumulated",ylab="Income Cumulated")
+
+```
+
+남아메리카 국가별 로렌츠 곡선 (1)
+
+```{r}
+opar<-par(no.readonly=TRUE)
+par(mfrow=c(3,2))
+plot(x , y9, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y9, labels=paste(y9))
+lines(x = x, y = x)
+title(main="Lorenz curve of Bolivia",xlab="People Cumulated",ylab="Income Cumulated")
+plot(x , y10, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y10, labels=paste(y10))
+lines(x = x, y = x)
+title(main="Lorenz curve of Brazil",xlab="People Cumulated",ylab="Income Cumulated")
+plot(x , y11, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y11, labels=paste(y11))
+lines(x = x, y = x)
+title(main="Lorenz curve of Colombia",xlab="People Cumulated",ylab="Income Cumulated")
+plot(x , y12, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y12, labels=paste(y12))
+lines(x = x, y = x)
+title(main="Lorenz curve of Costa Rica",xlab="People Cumulated",ylab="Income Cumulated")
+plot(x , y13, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y13, labels=paste(y13))
+lines(x = x, y = x)
+title(main="Lorenz curve of Dominica Republic",xlab="People Cumulated",ylab="Income Cumulated")
+
+
+```
+
+남아메리카 국가별 로렌츠 곡선 (2)
+
+```{r}
+opar<-par(no.readonly=TRUE)
+par(mfrow=c(2,3))
+plot(x , y14, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y14, labels=paste(y14))
+lines(x = x, y = x)
+title(main="Lorenz curve of Ecuador",xlab="People Cumulated",ylab="Income Cumulated")
+plot(x , y15, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y15, labels=paste(y15))
+lines(x = x, y = x)
+title(main="Lorenz curve of El Salvador",xlab="People Cumulated",ylab="Income Cumulated")
+plot(x , y16, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y16, labels=paste(y16))
+lines(x = x, y = x)
+title(main="Lorenz curve of Panama",xlab="People Cumulated",ylab="Income Cumulated")
+plot(x , y17, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y17, labels=paste(y17))
+lines(x = x, y = x)
+title(main="Lorenz curve of Paraguay",xlab="People Cumulated",ylab="Income Cumulated")
+plot(x , y18, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y18, labels=paste(y18))
+lines(x = x, y = x)
+title(main="Lorenz curve of Peru",xlab="People Cumulated",ylab="Income Cumulated")
+plot(x , y19, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y19, labels=paste(y19))
+lines(x = x, y = x)
+title(main="Lorenz curve of Uruguay",xlab="People Cumulated",ylab="Income Cumulated")
+
+
+```
+
+각 유럽별 로렌츠 곡선
+
+```{r}
+par(mfrow=c(1,2))
+plot(x , y20, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y20, labels=paste(y20))
+lines(x = x, y = x)
+title(main="Lorenz curve of Albania",xlab="People Cumulated",ylab="Income Cumulated")
+plot(x , y21, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y21, labels=paste(y22))
+lines(x = x, y = x)
+title(main="Lorenz curve of Romania",xlab="People Cumulated",ylab="Income Cumulated")
+
+```
+
+각 아프리카별 로렌츠 곡
+
+```{r}
+par(mfrow=c(2,2))
+plot(x , y22, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y22, labels=paste(y21))
+lines(x = x, y = x)
+title(main="Lorenz curve of Guinea",xlab="People Cumulated",ylab="Income Cumulated")
+plot(x , y23, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y23, labels=paste(y23))
+lines(x = x, y = x)
+title(main="Lorenz curve of Mauritius",xlab="People Cumulated",ylab="Income Cumulated")
+plot(x , y24, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y24, labels=paste(y24))
+lines(x = x, y = x)
+title(main="Lorenz curve of Tanzania",xlab="People Cumulated",ylab="Income Cumulated")
+plot(x , y25, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side=1,at=x, labels=paste(x))
+axis(side=2,at=y25, labels=paste(y25))
+lines(x = x, y = x)
+title(main="Lorenz curve of Uganda",xlab="People Cumulated",ylab="Income Cumulated")
+
+```
+
+piketty 소득불평등 자료 행렬 만들기
+
+```{r}
+z0 <- read.xlsx("data A.xlsx", 1, startRow=5, endRow=5, colIndex=2:6, header=FALSE)
+z0
+z1 <- read.xlsx("data A.xlsx", 1, startRow=6, endRow=6, colIndex=2:6, header=FALSE)
+z1
+z2 <- read.xlsx("data A.xlsx", 1, startRow=7, endRow=7, colIndex=2:6, header=FALSE)
+z2
+z3 <- read.xlsx("data A.xlsx", 1, startRow=8, endRow=8, colIndex=2:6, header=FALSE)
+z3
+z4<-rbind(z1,z0)
+z4
+z5<-rbind(z2,z4)
+z5
+z6<-rbind(z3,z5)
+z6
+y0 <- c(0,0,0,0,0)
+z7<- rbind(y0, z6)
+z7
+x1 <- c(0,50,90,99,100)
+cbind(x1, z7)
+z9 <- cbind(x1,z7)
+z9
+z10 <- cbind(x= z9[,1], apply(z9[, 2:6], 2, cumsum))
+dimnames(z10)[[2]] <- c("소득분위(%)","low","medium","medium-high","high","very-high")
+z10
+```
+
+이제 piketty자료에 대한 그래프를 만든다.
+```{r}
+kable(z10)
+```
+
+각 나라별 로렌츠 곡선을 만들기 위해 piketty 자료 중 하나를 low 열 자료를 고른다.
+```{r}
+z11<-z10[,2] 
+z11
+```
+
+각 나라별 로렌츠 곡선 만들기 및 표와 제목과 부제목 달기.
+
+```{r, fig.width=12, fig.height=12}
+opar<-par(no.readonly=TRUE)
+par(mfrow=c(1,1))
+y<-c(0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100)
+plot(z10[,1] , z11, type="l", ann=FALSE, xaxt="n", yaxt="n")
+axis(side = 1, at = x, labels = paste(x))
+axis(side = 2, at = y, labels = paste(y))
+lines(x=x,y=x)
+lines(x=x,y=y1,col="blue") 
+lines(x=x,y=y8,col="red")  
+lines(x=x,y=y10,col="cyan") 
+lines(x=x,y=y20, col="green") 
+lines(x=x,y=y25,col="purple") 
+title(main="각 나라 로렌츠 곡선 비교",xlab="People Cumulated",ylab="Income Cumulated")
+legend(x=5,y=95, legend=c("low","korea","Mexcio","Brazil","Albania","Uganda"),lty=1,col=c("black","blue","cyan","green","purple"),title="income inequality")
+
+```
+
+이제 area.R이라는 함수를 이용하여 각 나라별(한국,멕시코, 브라질, 알바니아, 우간다) 및 piketty low 수입의 지니계수를 구한다.
+
+```{r,echo=T,message=FALSE}
+area.R <- function(x, y) {
+
+  sum(diff(x) * (head(y, -1) + tail(y, -1))/2)
+
+}
+
+50-area.R(z10[,1], z10[,2])/100
+
+50-area.R(x, y1)/100
+
+50-area.R(x, y8)/100
+
+50-area.R(x, y10)/100
+
+50-area.R(x, y20)/100
+
+50-area.R(x, y25)/100
+```
+
+
+ggplot을 설치하기 위해, newdata10, z10을 다시 부른다.
+
+```{r}
+newdata10
+z10
+```
+
+
+```{r}
+library(reshape2)
+```
+
+piketty data를 부르고, 표를 만든다. 
+```{r}
+(piketty <- data.frame(cumulated.people=z10[,1],perfect=z10[,1],low= z10[,2]))
+
+```
+
+
+피캐티 자료를 부른다.
+```{r}
+(piketty.melt<-melt(piketty,id.vars = "cumulated.people", measure.vars=c("perfect","low"), variable.name="difference", value.name="cumulated.income"))
+```
+
+각 나라별 분포곡선ㅇ 부른다.
+```{r}
+(newdata10.2 <- data.frame(cumulated.people=newdata10[,1],Korea= newdata10[,2],Mexico= newdata10[,9],Brazil= newdata10[,11],Albania= newdata10[,21],Uganda= newdata10[,26]))
+(income.melt<-melt(newdata10.2,id.vars = "cumulated.people", measure.vars=c("Korea","Mexico","Brazil","Albania","Uganda"), variable.name="Nation", value.name="cumulated.income"))
+str(income.melt)
+```
+
+ggplot을 설치한다.
+```{r}
+library(ggplot2)
+```
+
+그래프를 그린다. 
+```{r}
+source("theme_kr.R")
+theme.kr
+(I.W.1 <- ggplot(piketty.melt,aes(x=cumulated.people, y=cumulated.income, colour=difference, group=difference)) + geom_line())
+I.W.1 + theme.kr + labs(colour="구분")
+```
+
+이제 piketty의 완전평등선과 소득불평등이 적은 나라의 곡선을 그린다. 
+```{r}
+(I.W.2 <- ggplot(income.melt, aes(x=cumulated.people, y=cumulated.income, colour=Nation, group=Nation)) + geom_line())
+```
+
+이제 2가지의 자료를 겹친다. 
+```{r}
+(I.W.3 <- I.W.2 + geom_line(data=piketty.melt, aes(x=cumulated.people, y=cumulated.income, colour=difference, group=difference)))
+
+```
+
+뒷 배경은 하얀배경으로 바꾼다.
+```{r}
+(I.W.4 <- I.W.3 + theme_bw())
+```
+
+
+범례 제목을 한글로 수정한다.
+```{r}
+source("theme_kr.R")
+(I.W.5 <- I.W.4 + theme.kr + xlab("누적인구비율(%)") + ylab("누적 소득률(%)") +
+ ggtitle("각 나라별 로렌츠곡선 비교 ") + labs(colour="나라") + scale_colour_discrete(labels = c("완전평등선", "저평등선", "한국", "멕시코", "브라질", "알바니아", "우간다"), limits=c("perfect", "low", "Korea", "Mexico", "Brazil", "Albania", "Uganda")))
+
+```
+
+
+범례를 그림 안쪽으로 이동시킨다.
+```{r}
+(I.W.6 <- I.W.5 + theme(legend.position = c(0.2, 0.7)))
+```
+
+X축의 눈금과 y축의 눈금을 조절하면 완성!
+```{r}
+(I.W.7 <- I.W.6 + scale_x_continuous(breaks=newdata10.2$cumulated.people) + scale_y_continuous(breaks=piketty$low))
+```
+

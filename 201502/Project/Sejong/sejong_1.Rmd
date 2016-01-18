@@ -1,0 +1,174 @@
+---
+title: "King Sejong's National Poll on Tax Reform"
+author: "성이다르조"
+date: "2015년 11월 13일"
+output: html_document
+---
+
+
+##자료구조
+원자료는 세종실록에서 가져오고, 요약한 표는 오기수 교수님의 논문을 바탕으로 excel작업을 거쳐 저장한 파일이다.
+```{r}
+install.packages("xlsx")
+library(xlsx)
+
+sejong.poll.rest<- read.xlsx("sejong_poll.xlsx", 1, endRow=45, colIndex=2:4, stringsAsFactors=TRUE)
+sejong.poll.count<- read.xlsx("sejong_poll.xlsx", 1, endRow=45, colIndex=1, stringsAsFactors=FALSE)
+sejong.poll.2<- data.frame(sejong.poll.count, sejong.poll.rest)
+sejong.poll.2
+str(sejong.poll.2)
+```
+
+
+##순서배열하기
+우리는 요인으로 투표,계급,지역이 필요하다. chr로 두면 알파벳 순서에 따라 집계할 때 고려하는 부분에서 위험할 수 있기때문에 factor()를 사용해야 한다. 
+```{r}
+sejong.poll.2$vote<- factor(sejong.poll.2$vote, levels=c("yes","no"), labels=c("yes","no"))
+sejong.poll.2$class<- factor(sejong.poll.2$class, levels=c("high","third.current","third.ex","chief","ordinary"), labels=c("High","3rd.current","3rd.former","Chief","Commons"))
+sejong.poll.2$region<- factor(sejong.poll.2$region, levels=c("Seoul","yuhu","gyunggi","pyungan","hwanghae","chungcheong","kangwon","hamgil","gyungsang","jeolla"), labels=c("Seoul","yuhu","gyunggi","pyungan","hwanghae","chungcheong","kangwon","hamgil","gyungsang","jeolla"))
+sejong.poll.2
+str(sejong.poll.2)
+```
+
+
+###그래프 그리기
+우선, 전체 계급에 대한 찬반(여론조사)을 원그래프로 나타낸다.
+```{r}
+xtabs(counts~vote, data=sejong.poll.2)
+sejong.poll.2$color[sejong.poll.2$vote=="yes"]<-"blue"
+sejong.poll.2$color[sejong.poll.2$vote=="no"]<-"red"
+pie(xtabs(counts~vote, data=sejong.poll.2),col=sejong.poll.2$color)
+title(main="전체 찬반")
+text(x=0, y=c(0.4,-0.4), labels=c("98657","74149"))
+```
+
+
+
+###관료(4개 계급)와 서민에 대한 여론조사
+계급별로 관료와 서민을 나눠서 여론조사를 조사한다.
+```{r}
+xtabs(counts~vote+class, data=sejong.poll.2)
+sejong.poll.2$class.2<-ifelse(sejong.poll.2$class=="Commons", "Commons", "Bureaus")
+sejong.poll.2$class.2
+str(sejong.poll.2)
+
+xtabs(counts~vote+class.2, data=sejong.poll.2)
+addmargins(xtabs(counts~vote+class.2, data=sejong.poll.2))
+```
+
+
+##pie차트
+계급별로 관료와 서민의 찬반을 각각 원그래프로 나타낸다.
+```{r}
+attach(sejong.poll.2)
+par(mfrow=c(1,2))
+pie(xtabs(counts~vote+class.2, data=sejong.poll.2[class.2=="Bureaus",],drop=T), labels=c("yes","no"), col=color)
+title(main="관료의 찬반")
+text(x=0, y=c(0.4,-0.4), labels=c("915","845"))
+
+pie(xtabs(counts~vote+class.2, data=sejong.poll.2[class.2=="Commons",],drop=T), labels=c("yes","no"), col=color)
+title(main="서민의 찬반")
+text(x=0, y=c(0.4,-0.4), labels=c("98657","74149"))
+legend("topright", fill=c("blue","red"), legend=c("yes","no"))
+```
+
+
+####관료와 서민에 대한 찬반비율(위와 같음)
+계급별로 관료와 서민의 찬반의비율을 막대그래프로 나타낸다.
+```{r}
+par(mfrow=c(1,1))
+options(digits=3)
+prop.table(xtabs(counts~vote+class.2, data=sejong.poll.2),margin=2)
+#prop.table(xtabs(counts~vote+class.2, data=sejong.poll.2))  
+//관료와 서민의 수가 크게 차이나므로 전체에 대한 비율을 구하면 안되고 각각의 전체관료들에대한 비율, 전체 서민들에 대한 비율을 구해야 된다.
+
+barplot(prop.table(xtabs(counts~vote+class.2, data=sejong.poll.2),margin=2), col=color, beside=TRUE, ylim=c(0.0,0.6))
+title(main="각 관료와 서민에 대한 찬반비율")
+legend("topright", fill=c("blue","red"), legend=c("yes","no"))
+
+```
+
+###지역에 따른 관료와 서민의 각 여론조사결과
+
+####관료의 각 지역별 찬반
+각 지역별 관료의 찬반을 막대그래프로 나타낸다.
+```{r}
+par(mfrow=c(1,1))
+xtabs(counts~vote+region, data=sejong.poll.2[class.2=="Bureaus",], drop=T)
+barplot(xtabs(counts~vote+region, data=sejong.poll.2[class.2=="Bureaus",], drop=T), col=color, beside=TRUE)
+title(main="관료의 각 지역별 찬반")
+legend("topright", fill=c("blue","red"), legend=c("yes","no"))
+```	
+
+
+###서울지역을 제외한 (제외한 이유설명해주기)
+서울은 다른 지역보다 월등히 많은 관료가 거주하므로 별도 집계한다.
+```{r}
+xtabs(counts~vote+region, data=sejong.poll.2[class.2=="Bureaus"& !region=="Seoul",], drop=T)
+
+##########barplot(xtabs(counts~vote+region, data=sejong.poll.2[class.2=="Bureaus"& !region=="Seoul",], drop=T), col=color, beside=TRUE, ylim=c(0,65), axes=F)
+
+axis(side=2, at=c(0,15,25,35,45,55,65), labels=c(0,15,25,35,45,55,65))
+title(main="관료의 각 지역별 찬반")
+legend("topright", fill=c("blue","red"), legend=c("yes","no"))
+```
+
+
+###서울의 각 계급별 찬반
+각 계급별 서울의 찬반을 막대그래프로 나타내고,한눈에 알아보기 쉽게mosaicplot으로 나타낸다.
+```{r}
+xtabs(counts~vote+class, data=sejong.poll.2[region=="Seoul",], drop=T)
+barplot(xtabs(counts~vote+class, data=sejong.poll.2[region=="Seoul",], drop=T), col=color, beside=T, ylim=c(0,500))                         
+title(main="서울의 각 계급별 찬반")
+legend("topleft", inset=0.05, fill=c("blue","red"), legend=c("yes","no"))
+```
+
+
+####서민의 각 지역별 찬반
+각 지역별 서민의 찬반 막대그래프를 보면 찬반투표수가 극심한 차이를 보이고 있다.
+```{r}
+xtabs(counts~vote+region, data=sejong.poll.2[class.2=="Commons",], drop=T)
+barplot(xtabs(counts~vote+region, data=sejong.poll.2[class.2=="Commons",], drop=T), col=color, beside=TRUE, ylim=c(0,36000), axes=F) 
+axis(side=2, at=c(0,9000,18000,27000,36000), labels=c(0,9000,18000,27000,36000))
+title(main="서민의 각 지역별 찬반")
+legend("topright", fill=c("blue","red"), legend=c("yes","no"))
+mosaicplot(xtabs(counts~class+vote, data=sejong.poll.2[region=="Seoul",], drop=T), col=color, main="서울의 각 계급별 찬반")
+library(reshape2)
+library(ggplot2)
+install.packages("grid",repos="http://www.rstudio.com")
+library(grid)
+
+
+
+
+#sejong.yes<-read.xlsx("sejong_yes.xlsx",1,colIndex=2:4, stringsAsFactors=TRUE)
+# sejong.yes.1<- read.xlsx("sejong_yes.xlsx", 1, endRow=45, colIndex=1, stringsAsFactors=FALSE)
+# sejong.yes.2<- data.frame(sejong.yes.1, sejong.yes)
+# sejong.yes.2
+#se<-ggplot(sejong.yes.2, aes(x=region, y=counts, colour=region))+geom_bar(stat="identity")
+# yes
+
+#se<-ggplot(sejong.poll.2, aes(x=class.2, colour=vote, shape=vote))
+#se+geom_bar(stat="identity")
+#str(sejong.poll.2)
+#?aes
+#sejong.poll.2[1:2]<-sapply(sejong.poll.2[1:2], as.numeric)
+#str(sejong.poll.2)
+#sejong.melt<-melt(sejong.poll.2,id.vars="region",measure.vars=c(1,2),variable.name="vote",value.name="counts")
+#str(sejong.melt)
+#sejong<-ggplot(sejong.melt, aes(x=region, y=counts, colour=())
+#sejong+geom_bar(stat="identity")
+
+
+
+
+##뒷정리
+```{r}
+save(file="Sejong_1.rda", list=ls())
+savehistory("Sejong_1.Rhistory")
+```
+
+
+
+
+

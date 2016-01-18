@@ -1,0 +1,239 @@
+---
+title: "세종대왕의 세법개혁과 세법개혁에 대한 국민투표"
+author: "성이다르조"
+date: "2015년 11월 18일"
+output: pdf_document
+---
+
+##목 차
+###서론
+####연구목적
+###본론
+####그래픽 분석
+##### pie chart
+##### bar plot & mosaicplot
+##### gglot을 이용한 분석
+###결론
+####결론
+####참고 자료
+
+###서론
+####연구목적
+세종대왕의 조세사상을 먼저 살펴보고, 공법의 입법과 시행하는
+과정에서의 특징을 살펴본 다음, 공법이 조선 500년 동안 ｢경국대전｣과 ｢속대전｣, ｢대전통편｣
+등의 전세법(田稅法)에 미치는 영향을 분석하고자 한다. 세종대왕이 입법한 공법을 조세법 측면
+에서 연구하는 목적은 공법의 규정 및 공법 입법과정의 역사적 우수성을 재정립 할뿐만 아니라
+학문적인 가치성을 세계화하는데 있다. 또한 세종대왕의 조세사상과 조세정책을 살펴봄으로써
+오늘날 시시때때로 당리당락에 따라 원칙없이 바뀌는 조세법의 입법과 조세정책에 대한 올바른
+원칙과 지침을 주고자 한다.
+
+###본론
+####그래프 분석
+
+①자료구조
+원자료는 세종실록에서, 요약한 표는 오기수 교수님의 논문을 참고한 자료이다.
+```{r}
+sejong.poll<-read.table("sejong_poll.txt", header=TRUE,sep="")
+str(sejong.poll)
+sejong.poll
+```
+
+-불러온 원자료를 새로운 변수로 저장하고, 요인으로 투표,계급,지역이 필요하기 때문에 factor()를 사용하여 알파벳 순서에 따라 집계할 때 고려하는 부분에서 위험요소를 없앤다.
+```{r}
+sejong.poll.2<-sejong.poll
+
+sejong.poll.2$vote<-factor(sejong.poll.2$vote, levels=c("yes","no"), labels=c("찬성","반대"))
+sejong.poll.2$class<-factor(sejong.poll.2$class, levels=c("high","chief","third.current","third.ex","ordinary"), labels=c("대신 등","수령", "3품이하현직", "3품이하전직", "품관촌민"))
+sejong.poll.2$region<-factor(sejong.poll.2$region, levels=c("Seoul","yuhu", "gyunggi", "pyungan", "hwanghae", "chungcheong", "kangwon", "hamgil", "gyungsang", "jeolla"),labels=c("서울","유후사","경기","평안","황해","충청","강원","함길","경상","전라"))
+str(sejong.poll.2)
+sejong.poll.2
+```
+
+-찬성과 반대의 색깔을 지정한다.
+```{r}
+sejong.poll.2$color[sejong.poll.2$vote=="찬성"]<-"blue"
+sejong.poll.2$color[sejong.poll.2$vote=="반대"]<-"red"
+```
+
+##그래프 그리기
+우선, 전체 계급에 대한 찬반(여론조사)을 pie chart로 나타낸다.
+```{r}
+options(digits=3)
+xtabs(counts~vote, data=sejong.poll.2)
+prop.table(xtabs(counts~vote, data=sejong.poll.2))
+
+pie(xtabs(counts~vote,data=sejong.poll.2),col=sejong.poll.2$color)
+title(main="전체 찬반")
+text(x=0, y=c(0.4,-0.4), labels=c("98657", "74149"))
+```
+
+-4개의 각 관료 인구수와 품관촌민 인구수가 월등히 차이가 나므로 관료집단과 품관촌민 두그룹으로 나눠서 pie chart를 그려보았다.
+```{r}
+xtabs(counts~vote+class, data=sejong.poll.2)
+
+sejong.poll.2$class.2<-ifelse(sejong.poll.2$class=="품관촌민", "품관촌민", "관료집단")
+str(sejong.poll.2)
+sejong.poll.2$class.2<-factor(sejong.poll.2$class.2,levels=c("관료집단","품관촌민"),labels=c("관료집단","품관촌민"))
+str(sejong.poll.2)
+
+xtabs(counts~vote+class.2, data=sejong.poll.2)
+addmargins(xtabs(counts~vote+class.2, data=sejong.poll.2))
+prop.table(xtabs(counts~vote+class.2,data=sejong.poll.2), margin=2)
+
+attach(sejong.poll.2)
+par(mfrow=c(1,2))
+pie(xtabs(counts~vote+class.2,data=sejong.poll.2[class.2=="관료집단",], drop=T), labels=c("찬성", "반대"),col=color)
+title(main="관료집단의 찬반")
+text(x=0, y=c(0.4,-0.4), labels=c("915", "845"))
+pie(xtabs(counts~vote+class.2,data=sejong.poll.2[class.2=="품관촌민",], drop=T), labels=c("찬성", "반대"),col=color)
+title(main="품관촌민의 찬반")
+text(x=0, y=c(0.4,-0.4), labels=c("97,742", "73,304"))
+```
+
+##지역에 따른 관료와 서민의 각 여론조사결과
+각 지역별 관료집단과 품관촌민의 찬반을 막대그래프로 나타낸다.
+```{r}
+par(mfrow=c(1,1))
+xtabs(counts~vote+region,data=sejong.poll.2[class.2=="관료집단",], drop=T)
+xtabs(counts~vote+region,data=sejong.poll.2[class.2=="품관촌민",], drop=T)
+```
+
+###서울지역의 여론조사결과
+- 서울은 다른 지역보다 월등히 많은 관료가 거주하므로 별도 집계하여, barplot과 mosaicplot으로 그려보았다.
+```{r}
+xtabs(counts~vote+class,data=sejong.poll.2[region=="서울",], drop=T)
+
+barplot(xtabs(counts~vote+class,data=sejong.poll.2[region=="서울",], drop=T), col=color)
+title(main="서울의 찬반")
+text(x=c(0.7, 1.9, 1.9, 3.1, 3.1), y=c(120, 450, 135, 500, 220), labels=c("194","393", "259", "117", "443"))
+legend("topleft",inset=0.05,fill=c("blue","red"),legend=c("찬성", "반대"))
+
+mosaicplot(xtabs(counts~class+vote, data=sejong.poll.2[region=="서울",], drop=T), col=color, main="서울의 찬반", xlab="계급" , ylab ="찬반")
+```
+
+###나머지 지역 관료집단의  여론조사결과
+-서울지역을 제외한 지역별 관료집단의 찬반을 barplot과 mosaicplot으로 그려보았다.
+```{r}
+xtabs(counts~vote+region,data=sejong.poll.2[class.2=="관료집단" & !region=="서울",], drop=T)
+barplot(xtabs(counts~vote+region, data=sejong.poll.2[class.2=="관료집단" & !region=="서울",], drop=T), col=color)
+title(main="지방 관료들의 찬반")
+legend("topleft", inset=0.05, fill=c("blue", "red"), legend=c("찬성", "반대"))
+
+mosaicplot(xtabs(counts~region+vote, data=sejong.poll.2[class.2=="관료집단" & !region=="서울",], drop=T), col=color, main="", xlab="계급", ylab="찬반")
+title(main="지방 관료들의 찬반")
+```
+
+###지역별 품관촌민의여론조사결과
+- 품관촌민들의 지역별 찬반을 barplot과 mosaicplot으로 나타내었다.
+```{r}
+barplot(xtabs(counts~vote+region, data=sejong.poll.2[class.2=="품관촌민",], drop=T), col=color)
+title(main="품관촌민들의 지역별 찬반")
+legend("topleft", inset=0.03, fill=c("blue", "red"), legend=c("찬성", "반대"))
+
+mosaicplot(xtabs(counts~region+vote, data=sejong.poll.2[class.2=="품관촌민",], drop=T), col=color, main="품관촌민의 지역별 찬반", xlab="지역", ylab="찬반")
+```
+
+##충청 지역의 여론조사결과
+- 충청도는 관료들의 찬반과 품관촌민의 찬반이 다른 곳이 있으므로 따로 집계하여 분석하였다.
+```{r}
+xtabs(counts~vote+class, data=sejong.poll.2[region=="충청",], drop=T)
+
+prop.table(xtabs(counts~vote+class, data=sejong.poll.2[region=="충청",], drop=T), margin=2)
+barplot(prop.table(xtabs(counts~vote+class, data=sejong.poll.2[region=="충청",], drop=T), margin=2), col=color, ylim=c(0, 1.5), axes=F)
+axis(side=2, at=c(0, 0.5, 1.0), labels=c("0%", "50%", "100%"))
+title(main="충청도의 계급별 찬반 비율")
+legend("topleft", inset=0.05, fill=c("blue", "red"), legend=c("찬성", "반대"))
+text(x=c(0.7, 1.9, 1.9, 3.1, 3.1), y=c(0.5, 0.3, 0.8, 0.15, 0.65), labels=c(2, 35, 26, 6982, 14013))
+
+mosaicplot(xtabs(counts~class+vote, data=sejong.poll.2[region=="충청",], drop=T), col=color, main="", xlab="계급", ylab="찬반")
+title(main="충청도의 찬반")
+```
+
+- 작업 디렉토리의 이미지와 히스토리를 저장하고 작업을 마무리.
+```{r}
+save.image(file="sejong_poll_project.rda")
+```
+
+
+
+
+
+#GGPlot에서 해보면
+
+```{r}
+install.packages("ggplot2")
+library(ggplot2)
+#서울지역의 여론조사
+(sejong.poll.2.seoul <- subset(sejong.poll.2, region == "서울"))
+(xtabs(counts~vote+class, data=sejong.poll.2.seoul, drop=TRUE))
+(g1<-ggplot(sejong.poll.2.seoul,aes(x=class,y=counts,fill=vote))+geom_bar(stat="identity")+theme_bw())
+
+#서울지역을 제외한 지역의 여론조사
+#(sejong.poll.2.rest<- subset(sejong.poll.2, !region=="서울"))
+#(sejong.poll.2.rest)
+#(xtabs(counts~vote+class, data=sejong.poll.2.rest, drop=TRUE))
+#(g2<-ggplot(sejong.poll.2.rest,aes(x=region,y=counts,fill=vote))+geom_bar(stat="identity")+theme_bw())
+
+```
+
+
+```{r fig.width=12, fig.height=6}
+#서울지역을 제외한 나머지 지역의 관료집단들에대한 여론조사
+(sejong.poll.2.bureaus <- subset(sejong.poll.2, class.2 == "관료집단"))
+(bureaus.region <- subset(sejong.poll.2.bureaus, !region=="서울"))
+(bureaus.region.tbl <- xtabs(counts ~ vote + region, data = bureaus.region, drop = TRUE))
+(bureaus.region.df <- as.data.frame(bureaus.region.tbl))
+(g3<-ggplot(bureaus.region.df, aes(x=region, y=Freq, fill=vote)) +geom_bar(stat="identity")+theme_bw())
+
+#서울지역을 제외한 나머지 지역의 품관촌민들에대한 여론조사
+(sejong.poll.2.commons <- subset(sejong.poll.2, class.2 == "품관촌민"))
+(commons.region <- subset(sejong.poll.2.commons, !region=="서울"))
+(commons.region.tbl<- xtabs(counts~vote+region, data=commons.region, drop=TRUE))
+(commons.region.df<- as.data.frame(commons.region.tbl))
+(g4<-ggplot(commons.region.df,aes(x=region, y=Freq, fill=vote))+geom_bar(stat="identity")+theme_bw())
+```
+
+```{r}
+#충청지역의 여론조사 결과
+(sejong.poll.2.cc<-subset(sejong.poll.2,region=="충청"))
+(sejong.cc<-prop.table(xtabs(counts~vote+class, data=sejong.poll.2.cc, drop=TRUE),margin=2))
+(sejong.cc.df <- as.data.frame(sejong.cc))
+(g5<-ggplot(sejong.cc.df,aes(x=class,y=Freq,fill=vote))+geom_bar(stat="identity")+theme_bw())
+```
+
+```{r}
+source("K:/Project./theme_kr.R")
+ls()
+
+(g1.1<-g1+theme.kr+xlab("계급")+ylab("투표수")+ggtitle("서울의 찬반")+theme(plot.title=element_text(size=30),legend.position=c(0.1,0.88)))
+
+#(g2.2<-g2+theme.kr+xlab("지역")+ylab("투표수")+ggtitle("서울지역을 제외한 지역의 찬반")+theme(plot.title=element_text(size=30),legend.position=c(0.1,0.88)))
+
+(g3.3<-g3+theme.kr+xlab("지역")+ylab("투표수")+ggtitle("지방관료들의 찬반")+theme(plot.title=element_text(size=30),legend.position=c(0.1,0.88)))
+
+(g4.4<-g4+theme.kr+xlab("지역")+ylab("투표수")+ggtitle("품관촌민의 지역별 찬반")+theme(plot.title=element_text(size=30),legend.position=c(0.1,0.88)))
+
+(g5.5<-g5+theme.kr+xlab("계급")+ylab("투표율(%)")+ggtitle("충청도의 찬반")+theme(plot.title=element_text(size=30)))
+```
+
+
+
+
+
+
+
+
+
+#연도별 호수 및 인구
+```{r}
+sejong.number<-read.table("population.txt", header=TRUE,sep="")
+sejong.number
+plot(x=sejong.number$"연도", y=sejong.number$"호수",type="b",ann=F, xaxt="n",yaxt="n",ylim=c(0,8000000))
+lines(x=sejong.number$"연도", y=sejong.number$"인구", type="b",col="red")
+axis(side=1, at=seq(1400,1800,by=100),labels=seq(1400,1800, by=100))
+axis(side=2, at=seq(0,8000000,by=2000000),labels=seq(0,800,by=200),las=1)
+title(main="조선시대 호수와 인구수의 변화",xlab="연도",ylab="호수와 인구수(단위: 만)")
+text(x=c(1650,1700),y=c(5000000,1900000), labels=c("인구","호수"),col=c("red","black"))
+legend("topleft",inset=0.05,fill=c("red","black"),legend=c("인구","호수"))
+```
+

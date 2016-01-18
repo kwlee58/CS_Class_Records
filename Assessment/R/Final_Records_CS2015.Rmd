@@ -1,0 +1,62 @@
+---
+title: "자료분석 사례연구 최종"
+author : "금융정보통계학과 이기원 교수"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<!--## Lab Assignment-->
+
+```{r Lab, echo=FALSE, message=FALSE, results='hide'}
+options(digits=3)
+library(xlsx)
+library(knitr)
+library(pander)
+panderOptions("table.split.table", Inf)
+(lab <- read.xlsx(file="../data/reportUserScoreList2015v4.xlsx", sheetIndex = 1, rowIndex = 2:32, colIndex = c(3:4, 6:14), header = TRUE, colClasses = c(rep("character", 2),  rep("numeric", 9))))
+v.names.lab <- c("ID", "Name", paste("Lab", 1:9, sep="_"))
+names(lab) <- v.names.lab
+#is.na(lab[, -(1:2)])
+#(lab.score <- ifelse(is.na(lab[, -(1:2)]), 0, 100))
+lab.score <- lab[, 3:11]
+(n.lab <- ncol(lab.score))
+(lab$sum <- rowSums(lab.score))
+lab$Score <- lab$sum*0.4/n.lab
+kable(lab[c("ID", "Name", "Score")], align=rep("c", 3))
+```
+
+<!--### Team Projects-->
+
+```{r Team Projects, echo=FALSE, message=FALSE, results='hide'}
+project <- read.xlsx(file="../data/project.xlsx", sheetIndex= 1, rowIndex = 2:31, colIndex = 2:10, colClasses = c(rep("character", 3), rep("numeric", 6)))
+# pander(project)
+team.score <- round(colMeans(project[, -(1:3)]*2, na.rm = TRUE), digits = 2)
+pander(team.score)
+# project$Score <- project$"계"*10
+project$Score <- team.score[match(project$"조", names(team.score))]
+kable(project[c(1:3, 10)])
+```
+
+<!--## Total Scores-->
+
+```{r Total Scores, echo=FALSE, results='hide'}
+total <- read.xlsx(file = "../data/scoreList2015v7.xlsx", sheetIndex = 1, rowIndex = 3:33, colIndex = 2:8, colClasses = c(rep("character", 2), rep("numeric", 5)), header = TRUE)
+total <- total[c(2, 1, 4:7, 3)]
+v.names.total <- c("ID", "Name", "Midterm", "Project", "Offline", "Lab", "Total")
+names(total) <- v.names.total
+kable(total)
+total.order <- total[match(lab$ID, total$ID), ]
+kable(total.order)
+N <- nrow(total.order)
+total.order$Ranks <- N + 1 - rank(total.order$Total)
+#kable(total.order[c("Name", "Total", "Ranks")])
+total.order$Grades <- ifelse(total.order$Ranks <= floor(30*0.4), "A+", ifelse(total.order$Ranks <= floor(30*0.7), "B+", "C+"))
+```
+
+```{r Final Results, echo=FALSE}
+kable(total.order)
+```

@@ -1,0 +1,29 @@
+---
+title: "Final_Case_Studies"
+author: "coop711"
+date: "2015년 12월 26일"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Lab Assignment
+
+```{r Lab}
+options(digits=3)
+library(xlsx)
+library(knitr)
+library(pander)
+panderOptions("table.split.table", Inf)
+(lab <- read.xlsx(file="~/Desktop/Works/Class/Case_Studies_in_Stat/Class_Records/Assessment/reportUserScoreList2015.xlsx", sheetIndex = 1, rowIndex = 2:32, colIndex = c(3:4, 6:14), header = TRUE, colClasses = rep("character", 2, "numeric", 9)))
+v.names.lab <- c("ID", "Name", paste("Lab", 1:9, sep="_"))
+names(lab) <- v.names.lab
+is.na(lab[, -(1:2)])
+(lab.score <- ifelse(is.na(lab[, -(1:2)]), 0, 100))
+(n.lab <- ncol(lab.score))
+(lab$sum <- rowSums(lab.score))
+lab$Score <- lab$sum*0.4/n.lab
+kable(lab[c("ID", "Name", "Score")], align=rep("c", 3))
+```

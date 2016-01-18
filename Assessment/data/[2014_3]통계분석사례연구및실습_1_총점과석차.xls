@@ -1,0 +1,722 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 11">
+<!--
+<link rel=File-List href="성적결과.files/filelist.xml">
+<link rel=Edit-Time-Data href="성적결과.files/editdata.mso">
+<link rel=OLE-Object-Data href="성적결과.files/oledata.mso">
+[if gte mso 9]>
+<xml>
+ <o:DocumentProperties>
+  <o:Author>김태기</o:Author>
+  <o:LastAuthor>김태기</o:LastAuthor>
+  <o:Created>2007-07-30T06:29:11Z</o:Created>
+  <o:LastSaved>2007-07-30T06:42:59Z</o:LastSaved>
+  <o:Company>4Soft(주)</o:Company>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml>
+<![endif]
+-->
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:1.0in .75in 1.0in .75in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;}
+.font6
+	{color:windowtext;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:돋움, monospace;
+	mso-font-charset:129;}
+.font8
+	{color:windowtext;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;}
+.font9
+	{color:windowtext;
+	font-size:10.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:돋움, monospace;
+	mso-font-charset:129;}
+.font10
+	{color:windowtext;
+	font-size:10.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;}
+tr
+	{mso-height-source:auto;
+	mso-ruby-visibility:none;}
+col
+	{mso-width-source:auto;
+	mso-ruby-visibility:none;}
+br
+	{mso-data-placement:same-cell;}
+.style0
+	{mso-number-format:General;
+	text-align:general;
+	vertical-align:middle;
+	white-space:nowrap;
+	mso-rotate:0;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:windowtext;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:돋움, monospace;
+	mso-font-charset:129;
+	border:none;
+	mso-protection:locked visible;
+	mso-style-name:표준;
+	mso-style-id:0;}
+td
+	{mso-style-parent:style0;
+	padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:windowtext;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:돋움, monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:middle;
+	border:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-protection:locked visible;
+	white-space:nowrap;
+	mso-rotate:0;}
+.xl24
+	{mso-style-parent:style0;
+	font-size:10.0pt;}
+.xl25
+	{mso-style-parent:style0;
+	font-size:10.0pt;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;}
+.xl26
+	{mso-style-parent:style0;
+	font-size:10.0pt;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;
+	text-align:center;}
+.xl27
+	{mso-style-parent:style0;
+	color:gray;
+	font-size:10.0pt;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;
+	border-top:.5pt dashed windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt dashed windowtext;
+	border-left:.5pt solid windowtext;}
+.xl28
+	{mso-style-parent:style0;
+	font-size:10.0pt;
+	border-top:.5pt dashed windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt dashed windowtext;
+	border-left:.5pt solid windowtext;}
+.xl29
+	{mso-style-parent:style0;
+	font-size:10.0pt;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;
+	border-top:.5pt dashed windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt dashed windowtext;
+	border-left:.5pt solid windowtext;}
+.xl30
+	{mso-style-parent:style0;
+	font-size:10.0pt;
+	text-align:center;
+	border-top:.5pt dashed windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:.5pt solid windowtext;}
+.xl31
+	{mso-style-parent:style0;
+	font-size:10.0pt;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;
+	text-align:center;
+	border-top:.5pt dashed windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:.5pt solid windowtext;}
+.xl32
+	{mso-style-parent:style0;
+	font-size:10.0pt;
+	font-weight:700;
+	text-align:center;
+	border-top:.5pt solid windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt dashed windowtext;
+	border-left:.5pt solid windowtext;}
+.xl33
+	{mso-style-parent:style0;
+	font-size:10.0pt;
+	font-weight:700;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;
+	text-align:center;
+	border-top:.5pt solid windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt dashed windowtext;
+	border-left:.5pt solid windowtext;}
+ruby
+	{ruby-align:left;}
+rt
+	{color:windowtext;
+	font-size:8.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:돋움, monospace;
+	mso-font-charset:129;
+	mso-char-type:none;
+	display:none;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <x:ExcelWorkbook>
+  <x:ExcelWorksheets>
+   <x:ExcelWorksheet>
+    <x:Name>Sheet1</x:Name>
+    <x:WorksheetOptions>
+     <x:DefaultRowHeight>270</x:DefaultRowHeight>
+     <x:Print>
+      <x:ValidPrinterInfo/>
+      <x:PaperSizeIndex>9</x:PaperSizeIndex>
+      <x:HorizontalResolution>600</x:HorizontalResolution>
+      <x:VerticalResolution>600</x:VerticalResolution>
+     </x:Print>
+     <x:Selected/>
+     <x:Panes>
+      <x:Pane>
+       <x:Number>3</x:Number>
+       <x:ActiveRow>12</x:ActiveRow>
+       <x:ActiveCol>7</x:ActiveCol>
+      </x:Pane>
+     </x:Panes>
+     <x:ProtectContents>False</x:ProtectContents>
+     <x:ProtectObjects>False</x:ProtectObjects>
+     <x:ProtectScenarios>False</x:ProtectScenarios>
+    </x:WorksheetOptions>
+   </x:ExcelWorksheet>
+  </x:ExcelWorksheets>
+  <x:WindowHeight>12825</x:WindowHeight>
+  <x:WindowWidth>15345</x:WindowWidth>
+  <x:WindowTopX>360</x:WindowTopX>
+  <x:WindowTopY>75</x:WindowTopY>
+  <x:ProtectStructure>False</x:ProtectStructure>
+  <x:ProtectWindows>False</x:ProtectWindows>
+ </x:ExcelWorkbook>
+</xml><![endif]-->
+</head>
+
+<body link=blue vlink=purple>
+<table x:str border=0 cellpadding=0 cellspacing=0 width=1186 style='border-collapse: collapse;table-layout:fixed;width:890pt'>
+	<tr>
+		<td width="30" align="center">과목명 :<b> 통계분석사례연구및실습 - 1</b><br>
+		</td>
+	</tr>
+	<tr>
+		<td width="30" align="center">과목번호 :<b>505519</b>
+		</td>
+	</tr>
+	<tr>
+		<td width="30" align="center">담당교수명 :<b>이기원</b></td>
+	</tr>
+</table>
+<table x:str border=0 cellpadding=0 cellspacing=0 width=1186 style='border-collapse: collapse;table-layout:fixed;width:890pt'>
+	<col width=82 style='mso-width-source:userset;mso-width-alt:2332;width:62pt'>
+	<col width=64 style='mso-width-source:userset;mso-width-alt:1820;width:48pt'>
+	<col width=79 span=4 style='mso-width-source:userset;mso-width-alt:2247; width:59pt'>
+	<col width=121 style='mso-width-source:userset;mso-width-alt:3441;width:91pt'>
+	<col width=92 span=2 style='mso-width-source:userset;mso-width-alt:2616; width:69pt'>
+	<col width=136 style='mso-width-source:userset;mso-width-alt:3868;width:102pt'>
+	<col width=143 style='mso-width-source:userset;mso-width-alt:4067;width:107pt'>
+	<col width=38 span=2 style='mso-width-source:userset;mso-width-alt:1080; width:29pt'>
+	<col width=64 style='mso-width-source:userset;mso-width-alt:1820;width:48pt'>
+	
+	<tr class=xl26 height=17 style='height:12.75pt'>
+		<td height=17 class=xl32 width=82 style='height:12.75pt;width:62pt'>학번</td>
+		<td class=xl32 width=64 style='border-left:none;width:48pt' id=list>성명</td>
+		<td class=xl32 width=64 style='border-left:none;width:48pt' id=list>학년</td>
+		<td class=xl32 width=80 style='border-left:none;width:48pt' id=list>학과</td>
+		
+		
+		
+		
+		 
+		
+		
+		<td class=xl32 width=79 style='border-left:none;width:59pt'>과제<font class="font10">[30%]</font></td>
+		
+		<td class=xl32 width=121 style='border-left:none;width:91pt'>팀<font class="font10">[50%]</font></td>
+		
+		
+		
+		
+		<td class=xl33 width=143 style='border-left:none;width:107pt'>off<br>출석<font class="font10">[20%]</font></td>
+		<td class=xl32 width=38 style='border-left:none;width:29pt'>총점</td>
+		<td class=xl32 width=38 style='border-left:none;width:29pt'>기타</td>
+		<td class=xl32 width=64 style='border-left:none;width:48pt'>최종점수</td>
+		<td class=xl32 width=38 style='border-left:none;width:59pt'>등수</td>
+	</tr>
+
+	
+	 <!-- 총점 -->
+	
+	<tr class=xl25 height=17 style='height:12.75pt'>
+		<td height=17 class=xl27 align=right style='height:12.75pt;border-top:none'>20083109</td>
+		<td class=xl28 style='border-top:none;border-left:none'>김민호</td>
+		<td class=xl28 style='border-top:none;border-left:none'>4</td>
+		<td class=xl28 style='border-top:none;border-left:none'>금융정보통계학과</td>
+		
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>27.0</td>
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>42.5</td>
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>19.0</td>		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>88.5</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>0</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>89</td>
+		<td class=xl28 style='border-top:none;border-left:none'>9</td>
+	</tr>
+	
+	
+	 <!-- 총점 -->
+	
+	<tr class=xl25 height=17 style='height:12.75pt'>
+		<td height=17 class=xl27 align=right style='height:12.75pt;border-top:none'>20103405</td>
+		<td class=xl28 style='border-top:none;border-left:none'>김소영</td>
+		<td class=xl28 style='border-top:none;border-left:none'>4</td>
+		<td class=xl28 style='border-top:none;border-left:none'>금융정보통계학과</td>
+		
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>27.0</td>
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>42.5</td>
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>18.0</td>		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>87.5</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>0</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>88</td>
+		<td class=xl28 style='border-top:none;border-left:none'>11</td>
+	</tr>
+	
+	
+	 <!-- 총점 -->
+	
+	<tr class=xl25 height=17 style='height:12.75pt'>
+		<td height=17 class=xl27 align=right style='height:12.75pt;border-top:none'>20043116</td>
+		<td class=xl28 style='border-top:none;border-left:none'>김육사</td>
+		<td class=xl28 style='border-top:none;border-left:none'>4</td>
+		<td class=xl28 style='border-top:none;border-left:none'>금융정보통계학과</td>
+		
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>30.0</td>
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>40.0</td>
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>17.0</td>		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>87</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>0</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>87</td>
+		<td class=xl28 style='border-top:none;border-left:none'>12</td>
+	</tr>
+	
+	
+	 <!-- 총점 -->
+	
+	<tr class=xl25 height=17 style='height:12.75pt'>
+		<td height=17 class=xl27 align=right style='height:12.75pt;border-top:none'>20093313</td>
+		<td class=xl28 style='border-top:none;border-left:none'>김이연</td>
+		<td class=xl28 style='border-top:none;border-left:none'>4</td>
+		<td class=xl28 style='border-top:none;border-left:none'>금융정보통계학과</td>
+		
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>30.0</td>
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>47.5</td>
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>20.0</td>		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>97.5</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>0</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>98</td>
+		<td class=xl28 style='border-top:none;border-left:none'>4</td>
+	</tr>
+	
+	
+	 <!-- 총점 -->
+	
+	<tr class=xl25 height=17 style='height:12.75pt'>
+		<td height=17 class=xl27 align=right style='height:12.75pt;border-top:none'>20085140</td>
+		<td class=xl28 style='border-top:none;border-left:none'>노후준</td>
+		<td class=xl28 style='border-top:none;border-left:none'>4</td>
+		<td class=xl28 style='border-top:none;border-left:none'>금융정보통계학과</td>
+		
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>24.3</td>
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>40.0</td>
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>17.0</td>		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>81.3</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>0</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>81</td>
+		<td class=xl28 style='border-top:none;border-left:none'>13</td>
+	</tr>
+	
+	
+	 <!-- 총점 -->
+	
+	<tr class=xl25 height=17 style='height:12.75pt'>
+		<td height=17 class=xl27 align=right style='height:12.75pt;border-top:none'>20093324</td>
+		<td class=xl28 style='border-top:none;border-left:none'>류동주</td>
+		<td class=xl28 style='border-top:none;border-left:none'>4</td>
+		<td class=xl28 style='border-top:none;border-left:none'>금융정보통계학과</td>
+		
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>21.9</td>
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>47.5</td>
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>12.0</td>		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>81.4</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>0</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>81</td>
+		<td class=xl28 style='border-top:none;border-left:none'>13</td>
+	</tr>
+	
+	
+	 <!-- 총점 -->
+	
+	<tr class=xl25 height=17 style='height:12.75pt'>
+		<td height=17 class=xl27 align=right style='height:12.75pt;border-top:none'>20117108</td>
+		<td class=xl28 style='border-top:none;border-left:none'>박원정</td>
+		<td class=xl28 style='border-top:none;border-left:none'>4</td>
+		<td class=xl28 style='border-top:none;border-left:none'>금융정보통계학과</td>
+		
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>30.0</td>
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>50.0</td>
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>20.0</td>		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>100</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>0</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>100</td>
+		<td class=xl28 style='border-top:none;border-left:none'>1</td>
+	</tr>
+	
+	
+	 <!-- 총점 -->
+	
+	<tr class=xl25 height=17 style='height:12.75pt'>
+		<td height=17 class=xl27 align=right style='height:12.75pt;border-top:none'>20093509</td>
+		<td class=xl28 style='border-top:none;border-left:none'>박정아</td>
+		<td class=xl28 style='border-top:none;border-left:none'>4</td>
+		<td class=xl28 style='border-top:none;border-left:none'>금융정보통계학과</td>
+		
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>30.0</td>
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>50.0</td>
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>20.0</td>		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>100</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>0</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>100</td>
+		<td class=xl28 style='border-top:none;border-left:none'>1</td>
+	</tr>
+	
+	
+	 <!-- 총점 -->
+	
+	<tr class=xl25 height=17 style='height:12.75pt'>
+		<td height=17 class=xl27 align=right style='height:12.75pt;border-top:none'>20093335</td>
+		<td class=xl28 style='border-top:none;border-left:none'>손호영</td>
+		<td class=xl28 style='border-top:none;border-left:none'>4</td>
+		<td class=xl28 style='border-top:none;border-left:none'>금융정보통계학과</td>
+		
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>30.0</td>
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>47.5</td>
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>18.0</td>		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>95.5</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>0</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>96</td>
+		<td class=xl28 style='border-top:none;border-left:none'>6</td>
+	</tr>
+	
+	
+	 <!-- 총점 -->
+	
+	<tr class=xl25 height=17 style='height:12.75pt'>
+		<td height=17 class=xl27 align=right style='height:12.75pt;border-top:none'>20117109</td>
+		<td class=xl28 style='border-top:none;border-left:none'>왕효선</td>
+		<td class=xl28 style='border-top:none;border-left:none'>4</td>
+		<td class=xl28 style='border-top:none;border-left:none'>금융정보통계학과</td>
+		
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>30.0</td>
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>50.0</td>
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>20.0</td>		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>100</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>0</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>100</td>
+		<td class=xl28 style='border-top:none;border-left:none'>1</td>
+	</tr>
+	
+	
+	 <!-- 총점 -->
+	
+	<tr class=xl25 height=17 style='height:12.75pt'>
+		<td height=17 class=xl27 align=right style='height:12.75pt;border-top:none'>20093349</td>
+		<td class=xl28 style='border-top:none;border-left:none'>이건철</td>
+		<td class=xl28 style='border-top:none;border-left:none'>4</td>
+		<td class=xl28 style='border-top:none;border-left:none'>금융정보통계학과</td>
+		
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>27.3</td>
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>47.5</td>
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>14.0</td>		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>88.8</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>0</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>89</td>
+		<td class=xl28 style='border-top:none;border-left:none'>9</td>
+	</tr>
+	
+	
+	 <!-- 총점 -->
+	
+	<tr class=xl25 height=17 style='height:12.75pt'>
+		<td height=17 class=xl27 align=right style='height:12.75pt;border-top:none'>20123428</td>
+		<td class=xl28 style='border-top:none;border-left:none'>이슬기</td>
+		<td class=xl28 style='border-top:none;border-left:none'>3</td>
+		<td class=xl28 style='border-top:none;border-left:none'>금융정보통계학과</td>
+		
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>30.0</td>
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>47.5</td>
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>20.0</td>		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>97.5</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>0</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>98</td>
+		<td class=xl28 style='border-top:none;border-left:none'>4</td>
+	</tr>
+	
+	
+	 <!-- 총점 -->
+	
+	<tr class=xl25 height=17 style='height:12.75pt'>
+		<td height=17 class=xl27 align=right style='height:12.75pt;border-top:none'>20113737</td>
+		<td class=xl28 style='border-top:none;border-left:none'>이지화</td>
+		<td class=xl28 style='border-top:none;border-left:none'>4</td>
+		<td class=xl28 style='border-top:none;border-left:none'>금융정보통계학과</td>
+		
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>30.0</td>
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>40.0</td>
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>20.0</td>		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>90</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>0</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>90</td>
+		<td class=xl28 style='border-top:none;border-left:none'>8</td>
+	</tr>
+	
+	
+	 <!-- 총점 -->
+	
+	<tr class=xl25 height=17 style='height:12.75pt'>
+		<td height=17 class=xl27 align=right style='height:12.75pt;border-top:none'>20117110</td>
+		<td class=xl28 style='border-top:none;border-left:none'>홍건희</td>
+		<td class=xl28 style='border-top:none;border-left:none'>4</td>
+		<td class=xl28 style='border-top:none;border-left:none'>금융정보통계학과</td>
+		
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>24.3</td>
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>50.0</td>
+		
+		
+		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>20.0</td>		
+		
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>94.3</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>0</td>
+		<td class=xl29 align=right style='border-top:none;border-left:none' x:num>94</td>
+		<td class=xl28 style='border-top:none;border-left:none'>7</td>
+	</tr>
+	
+	
+	
+	<![if supportMisalignedColumns]>
+	<tr height=0 style='display:none'>
+		<td width=82 style='width:62pt'></td>
+		<td width=64 style='width:48pt'></td>
+		
+		
+		
+		
+		<td width=79 style='width:59pt'></td>
+		<td width=121 style='width:91pt'></td>
+		
+		
+		
+		<td width=143 style='width:107pt'></td>
+		
+		<td width=38 style='width:29pt'></td>
+		<td width=38 style='width:29pt'></td>
+		<td width=64 style='width:48pt'></td>
+	</tr>
+	<![endif]>
+	</table>
+</body>
+</html>

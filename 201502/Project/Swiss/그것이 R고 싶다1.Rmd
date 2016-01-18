@@ -1,0 +1,132 @@
+---
+title: ''
+output: word_document
+---
+
+####인구변천이론 설명
+
+
+```{r, echo=FALSE, message=FALSE, results='hide'}
+getwd()
+library(xlsx)
+library(knitr)
+swiss.1<-read.xlsx("C:/Users/RUser/Documents/스위스주.xlsx", 1, colIndex=1:7,endRow=48,stringsAsFactors=FALSE, encoding = "UTF-8")
+swiss.1
+str(swiss.1)
+
+swiss.2<-swiss.1
+dimnames(swiss.2)
+list.names<-c("주이름","출생률", "농업", "징병률", "교육", "가톨릭", "영유아사망률(1세이전)")
+dimnames(swiss.2)[[2]] <- list.names
+swiss.2
+kable(summary(swiss.2), caption = "<각변수의 요약>")
+
+```
+
+인구변천이론에 따르면 1단계 산업사회 이전, 사망률과 출생률이 모두 높다고 한다.
+ 
+
+```{r, echo=FALSE,message=FALSE, results='hide', height= 100.2,  width=70}
+states.par<-par(no.readonly=TRUE)
+par("mai")
+par("mai"= c(0.5, 1.8, 0.3, 0.8))
+str(swiss.1)
+
+new.2<-data.frame(city=swiss.1$ city, fertility=swiss.1$Agriculture)
+new.agr<-data.frame(new.2,Infant.Mortality=swiss.1$Infant.Mortality)
+barplot(as.matrix(t(new.agr[,2:3])),beside=TRUE,horiz="TRUE", names.arg=swiss.1$city,las=1)
+title(main= "스위스산업화와 농업의관계")
+
+new.3<-data.frame(city=swiss.1$ city, fertility=swiss.1$Examination)
+new.exa<-data.frame(new.3,Infant.Mortality=swiss.1$Infant.Mortality)
+barplot(as.matrix(t(new.exa[,2:3])),beside=TRUE,horiz="TRUE", names.arg=swiss.1$city,las=1)
+title(main= "스위스산업화와 징병률의관계")
+
+new.4<-data.frame(city=swiss.1$ city, fertility=swiss.1$Education)
+new.edu<-data.frame(new.4,Infant.Mortality=swiss.1$Infant.Mortality)
+barplot(as.matrix(t(new.edu[,2:3])),beside=TRUE,horiz="TRUE", names.arg=swiss.1$city,las=1)
+title(main= "스위스산업화와 교육의관계")
+
+new.5<-data.frame(city=swiss.1$ city, fertility=swiss.1$Catholic)
+new.cat<-data.frame(new.5,Infant.Mortality=swiss.1$Infant.Mortality)
+barplot(as.matrix(t(new.cat[,2:3])),beside=TRUE,horiz="TRUE", names.arg=swiss.1$city,las=1)
+title(main= "스위스산업화와 카톨릭의관계")
+
+
+```
+
+양의 상관관계를 띄는 것을 볼 수 있으므로 결론적으로 스위스의 1888년은 아직 인구 변천 이론에 1단계에 머물러 있음으로 생각할 수 있다. 그리고 영유아 사망률과 각 변수간의 상관관계를 알아보기 위해서 그래프를 그려보면
+
+```{r, echo=FALSE}
+par("mai"= c(0.5, 0.9, 1, 0.5))
+plot(swiss.1[,2:7], pch=16)
+kable(cor(swiss.1[,2:7]))
+plot(swiss.1$Infant.Mortality~swiss.1$Agriculture,main="스위스산업화와 농업의 관계", xlab="농업", ylab="영유아사망률.1세이전", ylim=c(10,30),xlim=c(0,100))
+abline(lm(swiss.1$Infant.Mortality~swiss.1$Agriculture))
+options(digits = 3)
+c.1<-round(cor(swiss.1$Agriculture,swiss.1$Infant.Mortality),digit=3)
+text(c.1, x=40, y=18) 
+text("상관계수", x=25, y=18)
+summary(lm(swiss.1$Infant.Mortality~swiss.1$Agriculture))
+        
+
+plot(swiss.1$Infant.Mortality~swiss.1$Examination,main="스위스산업화와 징병률의 관계", xlab="징병률", ylab="영유아사망률.1세이전", ylim=c(10,30),xlim=c(0,40))
+abline(lm(swiss.1$Infant.Mortality~swiss.1$Examination))
+c.2<-round(cor(swiss.1$Examination,swiss.1$Infant.Mortality),digit=3)
+text(c.2, x=35, y=20) 
+text("상관계수", x=35, y=20.8)
+summary(lm(swiss.1$Infant.Mortality~swiss.1$Examination))
+
+plot(swiss.1$Infant.Mortality~swiss.1$Education,main="스위스산업화와 교육의 관계", xlab="교육", ylab="영유아사망률.1세이전", ylim=c(10,30),xlim=c(0,55))
+abline(lm(swiss.1$Infant.Mortality~swiss.1$Education))
+c.3<-round(cor(swiss.1$Education,swiss.1$Infant.Mortality),digit=3)
+text(c.3, x=40, y= 20)
+text("상관계수", x=40, y=20.8)
+summary(lm(swiss.1$Infant.Mortality~swiss.1$Education))
+
+plot(swiss.1$Infant.Mortality~swiss.1$Catholic,main="스위스산업화와 가톨릭의 관계", xlab="가톨릭", ylab="영유아사망률.1세이전", ylim=c(10,30),xlim=c(0,105))
+abline(lm(swiss.1$Infant.Mortality~swiss.1$Catholic))
+c.4<-round(cor(swiss.1$Catholic,swiss.1$Infant.Mortality),digit=3)
+text(c.4, x=60, y=21)
+text("상관계수", x=60, y=21.8)
+summary(lm(swiss.1$Infant.Mortality~swiss.1$Catholic))
+
+```
+
+각 변수간의 회구계수 또는 변수 합치기
+```{r, echo=FALSE}
+library(ggplot2)
+library(reshape2)
+(swiss.melt <- melt(swiss.1, id.vars = "city", measure.vars = c("Agriculture", "Infant.Mortality"), variable.name = "level", value.name = "data"))
+str(swiss.melt)
+
+ggplot(swiss.melt, aes(x = city, y = data, fill = level)) + geom_bar(data = swiss.melt, stat = "identity", position = "dodge") +coord_flip()+xlab("농업(%)")+ ylab("영유아사망률(Ig)")+ ggtitle("스위스산업화와 농업의관계")
+
+
+(swiss.melt2 <- melt(swiss.1, id.vars = "city", measure.vars = c("Examination", "Infant.Mortality"), variable.name = "level", value.name = "data"))
+str(swiss.melt2)
+
+ggplot(swiss.melt2, aes(x = city, y = data, fill = level)) + geom_bar(stat = "identity", position = "dodge") +
+  coord_flip()+xlab("징병률(%)")+ ylab("영유아사망률(Ig)")+ ggtitle("스위스산업화와 징병률의관계")
+
+(swiss.melt3 <- melt(swiss.1, id.vars = "city", measure.vars = c("Education", "Infant.Mortality"), variable.name = "level", value.name = "data"))
+str(swiss.melt3)
+
+ggplot(swiss.melt3, aes(x = city, y = data, fill = level)) + geom_bar(stat = "identity", position = "dodge") +
+  coord_flip()+xlab("교육(%)")+ ylab("영유아사망률(Ig)")+ ggtitle("스위스산업화와 교육의관계")
+
+(swiss.melt4 <- melt(swiss.1, id.vars = "city", measure.vars = c("Catholic", "Infant.Mortality"), variable.name = "level", value.name = "data"))
+str(swiss.melt4)
+
+ggplot(swiss.melt4, aes(x = city, y = data, fill = level)) + geom_bar(stat = "identity", position = "dodge") +
+  coord_flip()+xlab("종교(%)")+ ylab("영유아사망률(Ig)")+ ggtitle("스위스산업화와 종교의관계")
+
+
+ggplot(swiss.1, aes(y = Infant.Mortality, x = Agriculture ))+geom_point(pch=21 ,fill="red" , size =3.2 ) +geom_smooth(method = lm) + theme_bw() + xlab("농업(%)")+ ylab("영유아사망률(Ig)")+ ggtitle("스위스산업화와 농업의관계") 
+
+ggplot(swiss.1, aes(y = Infant.Mortality, x = Examination ))+geom_point(pch=21 ,fill="red" , size =3.2 ) +geom_smooth(method = lm) + theme_bw()+ xlab("징병률(%)")+ ylab("영유아사망률(Ig)")+ ggtitle("스위스산업화와 징병률의관계")
+
+ggplot(swiss.1, aes(y = Infant.Mortality, x = Education ))+geom_point(pch=21 ,fill="red" , size =3.2 ) +geom_smooth(method = lm) + theme_bw()+ xlab("교육(%)")+ ylab("영유아사망률(Ig)")+ ggtitle("스위스산업화와 교육의관계")
+
+ggplot(swiss.1, aes(y = Infant.Mortality, x = Catholic ))+geom_point(pch=21 ,fill="red" , size =3.2 ) +geom_smooth(method = lm) + theme_bw()+ xlab("종(%)")+ ylab("영유아사망률(Ig)")+ ggtitle("스위스산업화와 종교의관계")
+```
